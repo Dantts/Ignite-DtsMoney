@@ -4,5 +4,5 @@ export interface ITransactionProps {
   type: string;
   category: string;
   amount: number;
-  createAt: string;
+  createdAt: string;
 }
