@@ -54,7 +54,7 @@ export const Summary = () => {
       </div>
       <div>
         <header>
-          <p>Entradas</p>
+          <p>Total</p>
           <img src={totalImage} alt="Total" />
         </header>
         <strong>
