@@ -6,6 +6,7 @@ import { Header } from './components/Header';
 import { NewTransactionModal } from './components/NewTransactionModal';
 import { Dashboard } from './Pages/Dashboard';
 import { GlobalStyle } from './styles/global';
+import { TransactionsProvider } from './TransactionsContext';
 
 createServer({
   models: {
@@ -21,7 +22,7 @@ createServer({
           type: "deposit",
           category: "Dev",
           amount: 6000,
-          createAt: new Date("2221-02-12 09:00:00"),
+          createdAt: new Date("2221-02-12 09:00:00"),
         },
         {
           id: 2,
@@ -29,7 +30,7 @@ createServer({
           type: "withdraw",
           category: "Casa",
           amount: 1100,
-          createAt: new Date("2221-02-14 11:00:00"),
+          createdAt: new Date("2221-02-14 11:00:00"),
         },
       ],
     });
@@ -44,7 +45,7 @@ createServer({
 
     this.post("/transactions", (schema, request) => {
       const data = JSON.parse(request.requestBody);
-      return schema.create("transaction", data);
+      return schema.create("transaction", { ...data, createdAt: new Date() });
     });
   },
 });
@@ -63,7 +64,7 @@ export function App() {
   }
 
   return (
-    <>
+    <TransactionsProvider>
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <GlobalStyle />
@@ -71,6 +72,6 @@ export function App() {
         isOpen={isNewTransactionsOpen}
         onRequestClose={handleCloseNewTransactionModal}
       />
-    </>
+    </TransactionsProvider>
   );
 }
