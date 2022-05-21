@@ -1,11 +1,9 @@
-import { createContext, ReactNode, useEffect, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
-import { ITransactionProps } from './models/transaction.model';
-import { api } from './services/api';
+import { ITransactionProps } from '../models/transaction.model';
+import { api } from '../services/api';
 
-const INITIAL_STATE: ITransactionProps[] = [];
-
-export const TransactionsContext = createContext<TransactionsContextData>(
+const TransactionsContext = createContext<TransactionsContextData>(
   {} as TransactionsContextData
 );
 
@@ -44,3 +42,7 @@ export const TransactionsProvider = ({
     </TransactionsContext.Provider>
   );
 };
+
+export function useTransactions() {
+  return useContext(TransactionsContext);
+}

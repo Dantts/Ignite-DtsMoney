@@ -4,9 +4,9 @@ import ReactModal from 'react-modal';
 
 import { Header } from './components/Header';
 import { NewTransactionModal } from './components/NewTransactionModal';
+import { TransactionsProvider } from './hooks/useTransacions';
 import { Dashboard } from './Pages/Dashboard';
 import { GlobalStyle } from './styles/global';
-import { TransactionsProvider } from './TransactionsContext';
 
 createServer({
   models: {
