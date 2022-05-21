@@ -1,34 +1,53 @@
-import { createServer } from 'miragejs';
-import React from 'react';
+import { createServer, Model } from 'miragejs';
+import React, { useState } from 'react';
+import ReactModal from 'react-modal';
 
 import { Header } from './components/Header';
+import { NewTransactionModal } from './components/NewTransactionModal';
 import { Dashboard } from './Pages/Dashboard';
 import { GlobalStyle } from './styles/global';
 
 createServer({
+  models: {
+    transaction: Model,
+  },
+
   routes() {
     this.namespace = "api";
+
     this.get("/transactions", () => {
-      return [
-        {
-          id: 1,
-          title: "transactions 1",
-          amount: 400,
-          type: "deposit",
-          category: "Food",
-          createAt: "21/02/2022",
-        },
-      ];
+      return this.schema.all("transaction");
+    });
+
+    this.post("/transactions", (schema, request) => {
+      const data = JSON.parse(request.requestBody);
+      return schema.create("transaction", data);
     });
   },
 });
 
+ReactModal.setAppElement("#root");
+
 export function App() {
+  const [isNewTransactionsOpen, setIsNewTransactionOpen] = useState(false);
+
+  function handleOpenNewTransactionModal() {
+    setIsNewTransactionOpen(true);
+  }
+
+  function handleCloseNewTransactionModal() {
+    setIsNewTransactionOpen(false);
+  }
+
   return (
     <>
-      <Header />
+      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <GlobalStyle />
+      <NewTransactionModal
+        isOpen={isNewTransactionsOpen}
+        onRequestClose={handleCloseNewTransactionModal}
+      />
     </>
   );
 }
