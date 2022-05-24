@@ -91,6 +91,15 @@ export const GlobalStyle = createGlobalStyle`
     animation-fill-mode: both;
   }
 
+  .modal-close {
+    -webkit-animation-name: zoomOut;
+      animation-name: zoomOut;
+    -webkit-animation-duration: 0.35s;
+    animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
   .react-modal-close {
     position: absolute;
     right: 1.5rem;
@@ -124,5 +133,33 @@ export const GlobalStyle = createGlobalStyle`
     50% {
       opacity: 1;
     }
+  } 
+
+   @-webkit-keyframes zoomOut {
+    0% {
+      opacity: 1;
+    }
+    
+    50% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
+    }
+    100% {
+      opacity: 0;
+    }
+    }
+    @keyframes zoomOut {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+      }
+      100% {
+        opacity: 0;
+      }
   } 
 `;

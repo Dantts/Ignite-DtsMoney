@@ -22,6 +22,7 @@ export const NewTransactionModal = ({
   const [amount, setAmount] = useState(0);
   const [type, setType] = useState("deposit");
   const [category, setCategory] = useState("");
+  const [isClose, setIsClose] = useState(false);
 
   async function handleCreateNewTransaction(e: FormEvent) {
     e.preventDefault();
@@ -32,21 +33,25 @@ export const NewTransactionModal = ({
     setCategory("");
     setType("deposit");
 
-    onRequestClose();
+    closeModal();
+  }
+
+  function closeModal() {
+    setIsClose(true);
+    setTimeout(() => {
+      onRequestClose();
+      setIsClose(false);
+    }, 200);
   }
 
   return (
     <ReactModal
       isOpen={isOpen}
-      onRequestClose={onRequestClose}
+      onRequestClose={closeModal}
       overlayClassName="react-modal-overlay"
-      className="react-modal-content"
+      className={`react-modal-content ${isClose ? "modal-close" : ""}`}
     >
-      <button
-        type="button"
-        onClick={onRequestClose}
-        className="react-modal-close"
-      >
+      <button type="button" onClick={closeModal} className="react-modal-close">
         <img src={closeImg} alt="Fechar modal" />
       </button>
       <Container onSubmit={handleCreateNewTransaction}>
