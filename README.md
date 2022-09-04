@@ -27,7 +27,7 @@ Dependencies used in the _project_
 ### React-modal
 [React-modal](https://www.npmjs.com/package/react-modal) is basically for create a modal para um component React.
 
-### React-modal
+### MirageJS
 [MirageJS](https://miragejs.com/) is an API mocking library that lets you build, test and share a complete working JavaScript application without having to rely on any backend services.
 
 # Presentation
