@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Ignite-DtsMoney
+**Ignite-DtsMoney** created with <a href='https://pt-br.reactjs.org/' target="_blank">ReactJs</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is from Rocketseat Ignite second module for learning Reactjs. The purpose of this module is create the project to learn the fundamentals of Reactjs. Fundamentals that are componentization, creating functions, states in Reactjs, lifecycles with useEffect and creation of the personal hooks.
 
-## Available Scripts
+Basically this project is organization of earnings and expenses, where have a simple list cash inputs and outputs and registrations.
 
-In the project directory, you can run:
+# Run project
 
-### `yarn start`
+Basically to run the project, you just need to use the command `npm install` or `yarn to install` to install the project dependencies.
+With the dependencies installed, you just need to run `npm run start` or `yarn start` to start the project in the development environment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**To install the project dependencies is necessary to know which package manager is installed on your computer.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Packages
+Dependencies used in the _project_
 
-### `yarn test`
+### Axios
+[Axios](https://www.npmjs.com/package/axios) is a Promise based HTTP client for making requests.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Styled-components
+[Styled-components](https://styled-components.com/) is a library to write CSS code inside JavaScript.
 
-### `yarn build`
+### Polished
+[Polished](https://www.npmjs.com/package/polished) is a Sass-style helper functions to be productive.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### React-modal
+[React-modal](https://www.npmjs.com/package/react-modal) is basically for create a modal para um component React.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### React-modal
+[MirageJS](https://miragejs.com/) is an API mocking library that lets you build, test and share a complete working JavaScript application without having to rely on any backend services.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Presentation
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![GifIgniteListMovies](https://user-images.githubusercontent.com/80539719/188327013-71aa1f8c-3f5b-47c1-a72c-f4a2e251b160.gif)
